@@ -1,5 +1,5 @@
 ############################################################################################################################################## 
-#Looks for the .log files outputted by running the GenXSec Analyzer using calculateXSectionAndFilterEfficiency.sh 
+#Looks for the .log files outputted by running the GenXSec Analyzer using calculateXSectionAndFilterEfficiency.sh                            #
 #                                                                                                                                            #
 # Takes the .log files and extracts the following values and their errors:                                                                   #
 #  - total cross sections before matchhing (column name in the output numpy array: 'totX_beforeMat')                                         #
