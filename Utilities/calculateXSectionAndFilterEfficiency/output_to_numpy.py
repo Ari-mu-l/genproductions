@@ -1,5 +1,5 @@
-##############################################################################################################################################
-# Looks for the .log files outputted by running the GenXSec Analyzer using calculateXSectionAndFilterEfficiency.sh                           #
+############################################################################################################################################## 
+#Looks for the .log files outputted by running the GenXSec Analyzer using calculateXSectionAndFilterEfficiency.sh 
 #                                                                                                                                            #
 # Takes the .log files and extracts the following values and their errors:                                                                   #
 #  - total cross sections before matchhing (column name in the output numpy array: 'totX_beforeMat')                                         #
@@ -15,7 +15,9 @@
 #  1. Loading numpy array as output = np.load("output_numpy.npy")                                                                            #
 #  2. Accessing each catogory using names, which returns 1d array of size 2. The first element is the value. The second element is the error.#
 #	e.g. output["totX_final"][0] gives the value of the final total cross section                                                        #
-#            output["totX_final"][0] gives its error 
+#            output["totX_final"][0] gives its error                                                                                         #
+##############################################################################################################################################
+# To run the script, simply do: python output_to_numpy.py                                                                                    #
 ##############################################################################################################################################
 
 
