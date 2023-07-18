@@ -1,3 +1,28 @@
+############################################################################################################################################## 
+#Looks for the .log files outputted by running the GenXSec Analyzer using calculateXSectionAndFilterEfficiency.sh                            #
+#                                                                                                                                            #
+# Takes the .log files and extracts the following values and their errors:                                                                   #
+#  - total cross sections before matchhing (column name in the output numpy array: 'totX_beforeMat')                                         #
+#  - total cross sections after matching ('totX_afterMat')                                                                                   #
+#  - matching efficiency ('matchingEff')                                                                                                     #             
+#  - filter efficiency (weights) ('filterEff(weights)')                                                                                      #
+#  - filter efficiency (event) ('filterEff(event)')                                                                                          #
+#  - final total cross section ('totX_final')                                                                                                #
+#  - negative weight fraction ('negWeightFrac')                                                                                              #
+#  - equivalent luminosity ('equivLumi')                                                                                                     #
+#                                                                                                                                            #
+# These information can be accessed by:                                                                                                      #                                                                      #
+#  1. Loading numpy array as output = np.load("output_numpy.npy")                                                                            #
+#  2. Accessing each catogory using names, which returns 1d array of size 2. The first element is the value. The second element is the error.#
+#	e.g. output["totX_final"][0] gives the value of the final total cross section                                                        #
+#            output["totX_final"][0] gives its error                                                                                         #
+##############################################################################################################################################
+# To run the script, simply do: python output_to_numpy.py                                                                                    #
+# For each sample, it produces a .npy file with the name of the dataset                                                                      #
+##############################################################################################################################################
+
+
+
 #import subprocess
 import os
 import numpy as np
