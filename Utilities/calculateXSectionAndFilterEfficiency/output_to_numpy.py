@@ -32,7 +32,17 @@ import numpy as np
 
 file_list = [f for f in os.listdir(".") if f.startswith("xsec") and f.endswith(".log")]
 
-dt = {'names':['totX_beforeMat', 'totX_afterMat', 'matchingEff', 'filterEff(weights)', 'filterEff(event)', 'totX_final', 'negWeightFrac', 'equivLumi'], 'formats':[np.float64, np.float64, np.float64, np.float64, np.float64, np.float64, np.float64, np.float64]}
+#dt = {'names':['totX_beforeMat', 'totX_afterMat', 'matchingEff', 'filterEff(weights)', 'filterEff(event)', 'totX_final', 'negWeightFrac', 'equivLumi'], 'formats':[np.float64, np.float64, np.float64, np.float64, np.float64, np.float64, np.float64, np.float64]}
+
+dt = np.dtype(float, metadata={"totX_beforeMat":"Total cross section before matching",
+                               "totX_afterMat":"Total cross section after matching",
+                               "matchingEff":"Matching efficiency",
+                               "filterEff(weights)":"Filter efficiency (taking into account weights)",
+                               "filterEff(event)":"Filter efficiency (event-level)",
+                               "totX_final":"Final cross senction after filter",
+                               "negWeightFrac":"Final fraction of events with negative weights after filter",
+                               "equivLumi":"Final equivalent lumi for 1M events (1/fb)"
+})
 
 for fname in sorted(file_list):
     xsec_arr = np.zeros((2,8))
@@ -78,3 +88,6 @@ for fname in sorted(file_list):
 
     np.save(dset, xsec_arr)
     #print(xsec_arr)
+
+    #print(xsec_arr.dtype.metadata)
+    #print(xsec_arr.dtype.metadata["equivLumi"])
